@@ -1,20 +1,17 @@
 name: Testes Node
 
-'on':
+on:
   pull_request:
     branches:
-      - principal
       - main
-  push:
-    branches:
-      - teste-actions
+      - principal
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Baixar codigo
+      - name: Baixar código
         uses: actions/checkout@v4
 
       - name: Instalar Node
@@ -22,11 +19,9 @@ jobs:
         with:
           node-version: 20
 
-      - name: Instalar dependencias
+      - name: Instalar dependências
         run: npm install
 
-      - name: Instalar Jest
-        run: npm install --save-dev jest
-
       - name: Rodar testes
-        run: npx jest
+        run: npx jest --runInBand
+        

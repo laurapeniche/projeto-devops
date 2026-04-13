@@ -11,14 +11,11 @@ function multiplicacao(a, b) {
 }
 
 function divisao(a, b) {
-  if (b === 0) {
-    throw new Error("Divisão por zero");
-  }
   return a / b;
 }
 
-function ehPar(numero) {
-  return numero % 2 === 0;
+function ehPar(n) {
+  return n % 2 === 0;
 }
 
 module.exports = {
