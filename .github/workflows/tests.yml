@@ -5,6 +5,9 @@ on:
     branches:
       - main
       - principal
+  push:
+    branches:
+      - teste-actions
 
 jobs:
   test:
@@ -20,8 +23,7 @@ jobs:
           node-version: 20
 
       - name: Instalar dependências
-        run: npm install
+        run: npm ci
 
       - name: Rodar testes
-        run: npx jest --runInBand
-        
+        run: npm test
