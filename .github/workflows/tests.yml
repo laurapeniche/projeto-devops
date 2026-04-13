@@ -25,5 +25,9 @@ jobs:
       - name: Instalar dependencias
         run: npm install
 
+      - name: Instalar Jest
+        run: npm install --save-dev jest
+
       - name: Rodar testes
-        run: npx test
+        run: npx jest --runInBand
+        
