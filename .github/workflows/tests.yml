@@ -1,0 +1,29 @@
+name: Testes Node
+
+'on':
+  pull_request:
+    branches:
+      - principal
+      - main
+  push:
+    branches:
+      - teste-actions
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar codigo
+        uses: actions/checkout@v4
+
+      - name: Instalar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Rodar testes
+        run: npm test
